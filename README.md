@@ -23,6 +23,8 @@ adding the permission to the ```AndroidManifest.xml ```:
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 </manifest>
 ```
+
+
 Make sure to replace "com.example.yourappname" with the actual package name of your Flutter app.
 
 
