@@ -1,7 +1,20 @@
 # Image_editor_app
 
+features of the app:
+```
+selects the image from the device's gallery.
+for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more
+displays both the original and edited versions of the image (preview of the image)
+performs editing on the previously edited image instead of the original image; if there's no previously edited image, it will edit the original image.
+saves the edited image to the device's gallery
+provides feedback messages to users through Snackbars
 
-Here's the demo for the app, which shows the features of the app:
+```
+
+
+
+
+Here's the demo which shows the features of the app:
 
 
 
