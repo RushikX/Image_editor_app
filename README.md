@@ -60,7 +60,7 @@ adding the permission to the ```AndroidManifest.xml ```
 ```
 
 
-Make sure to replace "com.example.yourappname" with the actual package name of your Flutter app.
+>**Make sure to replace "com.example.yourappname" with the actual package name of your Flutter app.**
 
 
 
