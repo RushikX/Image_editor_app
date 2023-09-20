@@ -1,9 +1,9 @@
 # Image_editor_app
 
 features of the app:
-```dart
 
-_selects the image from the device's gallery._
+
+_selects the image from the device's gallery.
 
 for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more
 
@@ -18,7 +18,7 @@ saves the edited image to the device's gallery
 provides feedback messages to users through Snackbars_
 
 
-```
+
 
 
 
