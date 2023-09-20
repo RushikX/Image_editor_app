@@ -11,7 +11,7 @@ Uploading Android Emulator - Pixel_6_API_33_5554 2023-09-20 22-37-31.mp4…
 
 
 
-Required Dependencies in ```pubspec.yaml```:
+Required Dependencies in ```pubspec.yaml```
  ``` dart
 dependencies:
   flutter:
@@ -24,7 +24,7 @@ dependencies:
   permission_handler: ^11.0.0
 ```
 
-adding the permission to the ```AndroidManifest.xml ```:
+adding the permission to the ```AndroidManifest.xml ```
 ``` dart
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yourappname">
