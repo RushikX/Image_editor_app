@@ -1,7 +1,7 @@
 # Image_editor_app
 
-Required Dependencies in '''pubspec.yaml''':
-''' rugby
+Required Dependencies in ```pubspec.yaml```:
+ ```rugby
 dependencies:
   flutter:
     sdk: flutter
@@ -11,6 +11,6 @@ dependencies:
   image_editor_plus: ^1.0.3
   path_provider: ^2.1.1
   permission_handler: ^11.0.0
-'''
+```
 
 
