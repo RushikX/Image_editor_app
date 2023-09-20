@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_editor_plus/image_editor_plus.dart';
@@ -41,74 +40,31 @@ class _ImageEditorExampleState extends State<ImageEditorExample> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (editedImageData != null) ...[
-              Image.memory(editedImageData!), // Show edited image
-              const SizedBox(height: 16),
-            ],
-            if (imageData != null) ...[
-              Image.memory(imageData!),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () async {
-                  final selectedImageData = await loadAsset();
-                  if (selectedImageData != null) {
-                    setState(() {
-                      imageData = selectedImageData;
-                      editedImageData = null; // Clear previously edited image
-                    });
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  backgroundColor: Colors.white,
-                ),
-                child: const Text(
-                  "Select an Image",
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (imageData != null) ...[
+                const Text(
+                  "Original Image",
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () async {
-                  if (imageData != null) {
-                    var editedImage = await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ImageEditor(
-                          image: imageData,
-                        ),
-                      ),
-                    );
-
-                    // Replace with edited image and update UI
-                    if (editedImage != null) {
+                const SizedBox(height: 16),
+                Image.memory(imageData!),
+                const SizedBox(height: 16),
+                ElevatedButton(
+                  onPressed: () async {
+                    final selectedImageData = await loadAsset();
+                    if (selectedImageData != null) {
                       setState(() {
-                        editedImageData = editedImage;
+                        imageData = selectedImageData;
+                        editedImageData = null; // Clear previously edited image
                       });
                     }
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  backgroundColor: Colors.white,
-                ),
-                child: const Text(
-                  "Single image editor",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),
-              if (editedImageData != null) ...[
-                ElevatedButton(
-                  onPressed: () {
-                    saveEditedImage(editedImageData!);
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
@@ -117,37 +73,114 @@ class _ImageEditorExampleState extends State<ImageEditorExample> {
                     backgroundColor: Colors.white,
                   ),
                   child: const Text(
-                    "Save Image",
+                    "Select an Image",
                     style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () async {
+                    if (imageData != null) {
+                      var initialImage = editedImageData ?? imageData;
+                      var editedImage = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageEditor(
+                            image: initialImage,
+                          ),
+                        ),
+                      );
+
+                      // Replace with edited image and update UI
+                      if (editedImage != null) {
+                        setState(() {
+                          editedImageData = editedImage;
+                        });
+                      }
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                  child: const Text(
+                    "Edit the Image",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Divider(
+                  color: Colors.white,
+                ),
+                if (editedImageData != null) ...[
+                  const SizedBox(height: 16),
+                  const Text(
+                    "Edited Image",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  Image.memory(editedImageData!),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  // Display the edited image
+                  ElevatedButton(
+                    onPressed: () {
+                      saveEditedImage(editedImageData!);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      backgroundColor: Colors.white,
+                    ),
+                    child: const Text(
+                      "Save Image",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ] else ...[
+                ElevatedButton(
+                  onPressed: () async {
+                    final selectedImageData = await loadAsset();
+                    if (selectedImageData != null) {
+                      setState(() {
+                        imageData = selectedImageData;
+                        editedImageData = null; // Clear previously edited image
+                      });
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    backgroundColor: Colors.white,
+                  ),
+                  child: const Text(
+                    "Select an Image",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
-            ] else ...[
-              ElevatedButton(
-                onPressed: () async {
-                  final selectedImageData = await loadAsset();
-                  if (selectedImageData != null) {
-                    setState(() {
-                      imageData = selectedImageData;
-                      editedImageData = null; // Clear previously edited image
-                    });
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  backgroundColor: Colors.white,
-                ),
-                child: const Text(
-                  "Select an Image",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),
             ],
-          ],
+          ),
         ),
       ),
     );
@@ -166,8 +199,11 @@ class _ImageEditorExampleState extends State<ImageEditorExample> {
 
   Future<void> saveEditedImage(Uint8List editedImage) async {
     try {
-      final directory = await getApplicationDocumentsDirectory();
-      final filePath = '${directory.path}/edited_image.png';
+      final directory = await getExternalStorageDirectory();
+      final uniqueId = DateTime.now()
+          .millisecondsSinceEpoch
+          .toString(); // Generate a unique ID
+      final filePath = '${directory!.path}/edited_image_$uniqueId.png';
       final file = File(filePath);
       await file.writeAsBytes(editedImage);
 
