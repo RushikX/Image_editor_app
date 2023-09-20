@@ -1,5 +1,16 @@
 # Image_editor_app
 
+
+```Here's the demo for the app, which shows the features of the app:```
+
+
+
+
+Uploading Android Emulator - Pixel_6_API_33_5554 2023-09-20 22-37-31.mp4…
+
+
+
+
 Required Dependencies in ```pubspec.yaml```:
  ``` dart
 dependencies:
