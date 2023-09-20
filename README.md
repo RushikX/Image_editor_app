@@ -2,7 +2,7 @@
 
 features of the app:
 
-
+```
 _selects the image from the device's gallery._
 
 _for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more_
@@ -15,6 +15,7 @@ _saves the edited image to the device's gallery_
 
 _provides feedback messages to users through Snackbars_
 
+```
 
 
 
