@@ -1,12 +1,16 @@
 # Image_editor_app
 
 
-```Here's the demo for the app, which shows the features of the app:```
+Here's the demo for the app, which shows the features of the app:
 
 
 
 
-Uploading Android Emulator - Pixel_6_API_33_5554 2023-09-20 22-37-31.mp4…
+https://github.com/RushikX/Image_editor_app/assets/111432352/1b56abb8-ed51-46fe-89c3-827501f35cef
+
+https://clipchamp.com/watch/M2k5AUzLA61
+
+
 
 
 
