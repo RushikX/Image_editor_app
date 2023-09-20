@@ -1,6 +1,6 @@
 # Image_editor_app
 
-`features of the app:`
+```features of the app:```
 
 
 >*selects the image from the device's gallery.*
@@ -18,7 +18,7 @@
 
 
 
-
+****
 
 
 
