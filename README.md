@@ -3,19 +3,17 @@
 features of the app:
 
 
-_selects the image from the device's gallery.
+_selects the image from the device's gallery._
 
-for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more
+_for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more_
 
-displays both the original and edited versions of the image (preview of the image)
+_displays both the original and edited versions of the image (preview of the image)_
 
-performs editing on the previously edited image instead of the original image; if there's no previously edited image, it 
+_performs editing on the previously edited image instead of the original image_
 
-will edit the original image.
+_saves the edited image to the device's gallery_
 
-saves the edited image to the device's gallery
-
-provides feedback messages to users through Snackbars_
+_provides feedback messages to users through Snackbars_
 
 
 
