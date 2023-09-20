@@ -2,8 +2,8 @@
 
 features of the app:
 
-```
-_selects the image from the device's gallery._
+
+>*selects the image from the device's gallery.*
 
 _for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more_
 
