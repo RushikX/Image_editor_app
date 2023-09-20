@@ -1,7 +1,7 @@
 # Image_editor_app
 
 Required Dependencies in ```pubspec.yaml```:
- ```rugby
+ ``` dart
 dependencies:
   flutter:
     sdk: flutter
@@ -12,5 +12,18 @@ dependencies:
   path_provider: ^2.1.1
   permission_handler: ^11.0.0
 ```
+
+adding the permission to the ```AndroidManifest.xml ```:
+``` dart
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yourappname">
+    
+    <!-- ... other manifest elements ... -->
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>
+```
+
+
 
 
