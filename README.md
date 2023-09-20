@@ -3,7 +3,7 @@
 features of the app:
 ```dart
 
-_selects the image from the device's gallery.
+_selects the image from the device's gallery._
 
 for editing the image , image_editor_plus was used which includes cropping, rotating, applying filters and more
 
