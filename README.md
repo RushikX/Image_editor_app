@@ -8,7 +8,6 @@ Here's the demo for the app, which shows the features of the app:
 
 https://github.com/RushikX/Image_editor_app/assets/111432352/1b56abb8-ed51-46fe-89c3-827501f35cef
 
-https://clipchamp.com/watch/M2k5AUzLA61
 
 
 
